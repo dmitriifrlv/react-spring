@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { useSpring, animated, config } from "react-spring";
 import { useState } from "react";
