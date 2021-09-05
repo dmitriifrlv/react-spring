@@ -1,18 +1,111 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+} */
+
+:root {
+  --purp: #524763;
+  --darkPurp: #373142;
+  --xtraPurp: #191324;
+  --grey: #d8d8d8;
+  --teal: #82d8d8;
+  --red: #e54b4b;
+  --black: #333;
+  --black-20: #4f4f4f;
+  --black-40: #828282;
+  --black-60: #bdbdbd;
+  --white-60: #e0e0e0;
+  --white-40: #f2f2f2;
+  --white-20: #f5f4f6;
+  --white: #fff;
+}
+
+body {
+  background-color: #282c34;
 }
 
 .App {
-  height: 100vh;
-  background-color: rgb(124, 199, 153);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
 }
 
+.logo {
+  width: 200px;
+}
+
+.App-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 0 5%;
+}
+
+.App-link {
+  color: var(--teal);
+}
+
+.nav-wrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 100px;
+  background: var(--purp);
+  z-index: 10;
+}
+
+.nav-wrapper a {
+  display: block;
+  text-align: left;
+  font-size: 4rem;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s ease border;
+  border-bottom: solid 4px transparent;
+}
+
+.nav-wrapper a:hover {
+  border-bottom: solid 4px var(--teal);
+}
+.text {
+  color: green;
+  font-size: 3rem;
+}
+.menu-button {
+  appearance: none;
+  color: green;
+  font-weight: bold;
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+  z-index: 15;
+  cursor: pointer;
+}
+
+h1 {
+  color: white;
+}
+
+.checkout {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+}
+.checkout-left {
+  width: 30%;
+  height: 100%;
+  background: white;
+}
+.checkout-right {
+  width: 70%;
+  height: 100%;
+  background: var(--purp);
+}
 .rectangle {
   width: 10rem;
   height: 10rem;
@@ -23,14 +116,16 @@
   justify-content: center;
 }
 
-button {
+.testBtn {
   padding: 1rem 2rem;
   margin-bottom: 5rem;
 }
 
 .container {
+  color: wheat;
   border: 1px solid black;
   width: 100%;
+  min-height: 20rem;
   display: flex;
   gap: 5rem;
   justify-content: space-around;

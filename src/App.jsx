@@ -1,42 +1,28 @@
 import "./App.css";
-import { useSpring, animated, config } from "react-spring";
-import { useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Simple } from "./pages/Simple";
+import NavMenu from "./pages/NavMenu";
+import { Transitions } from "./pages/Transitions";
+import { TransitionArray } from "./pages/TransitionArray";
 
 function App() {
-  const [toggle, setToggle] = useState(false);
-  const { background, z } = useSpring({
-    background: toggle ? "red" : "green",
-    y: !toggle ? 0 : 50,
-    z: !toggle ? 0 : 150,
-  });
-
-  const props = useSpring({
-    from: {
-      borderRadius: "0",
-    },
-    to: {
-      borderRadius: " 50%",
-    },
-    config: config.gentle,
-  });
-
   return (
-    <div className="App">
-      <button onClick={() => setToggle(!toggle)}>Test</button>
-      <div className="container">
-        <animated.div
-          className="rectangle"
-          style={{
-            background,
-            transform: z.to((z) => `translate3d(${z}px, ${z}px, 0)`),
-          }}
-        >
-          I will fade in
-        </animated.div>
-
-        <animated.div className="rectangle" style={props}></animated.div>
-      </div>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/navmenu">
+          <NavMenu />
+        </Route>
+        <Route path="/simple">
+          <Simple />
+        </Route>
+        <Route path="/transitions">
+          <Transitions />
+        </Route>
+        <Route path="/array">
+          <TransitionArray />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
